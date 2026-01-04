@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GeeksForGeeks</title>
+  </head>
+
+  <body style="text-align: center">
+    <div id="target">
+      <h1>Hello Geeks</h1>
+      <h2 class="example">This is a sample sub heading</h2>
+      <p id="this">This is sample paragraph1</p>
+      <p>This is sample paragraph2</p>
+      <input type="text" name="username" id="userName" />
+    </div>
+    <script>
+      const queryS = document.querySelector(".example");
+      const gebi = document.getElementById("target");
+      const gebcn = document.getElementsByClassName("example");
+      const gebtn = document.getElementsByTagName("p");
+      const gebn = document.getElementsByName("username");
+      const querySAll = document.querySelectorAll("p");
+      console.log(queryS);
+      console.log(gebi);
+      console.log(gebcn);
+      console.log(gebn);
+      console.log(gebtn);
+      console.log(querySAll);
+      console.log(document.getElementById("this").innerText="<b>Hello</b>")
+    </script>
+  </body>
+</html>
