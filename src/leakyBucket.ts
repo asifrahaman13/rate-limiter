@@ -47,7 +47,7 @@ class APIHandler {
 
     constructor(requestsPerSecond: number, burstCapacity: number) {
         const leakRatePerMs = requestsPerSecond / 1000;
-        this.rateLimiter = new LeakyBucket(burstCapacity, leakRatePerMs, 0);
+        this.rateLimiter = new LeakyBucket(burstCapacity, leakRatePerMs);
     }
 
     handleRequest(userId: string, endpoint: string): boolean {
@@ -74,7 +74,7 @@ function demonstrateScenarios() {
     }
 
     console.log('\n2. Login endpoint (5 req/minute, burst of 2):');
-    const loginLimiter = new LeakyBucket(2, 5 / 60000, 0);
+    const loginLimiter = new LeakyBucket(2, 5 / 60000);
 
     for (let i = 0; i < 8; i++) {
         const allowed = loginLimiter.consumeBucket();
@@ -83,7 +83,7 @@ function demonstrateScenarios() {
 }
 
 async function handleAPIRequests() {
-    const limiter = new LeakyBucket(5, 0.005, 0);
+    const limiter = new LeakyBucket(5, 0.005);
 
     const requests = Array.from({ length: 10 }, (_, i) => `Request ${i + 1}`);
 
