@@ -32,7 +32,7 @@ export class LeakyBucket {
     }
 }
 
-const rateLimiter = new LeakyBucket(10, 0.01, 0);
+const rateLimiter = new LeakyBucket(10, 0.01);
 function testBasicRateLimiting() {
     console.log('Testing basic LeakyBucket rate limiter...\n');
 
