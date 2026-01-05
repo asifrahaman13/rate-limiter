@@ -4,7 +4,7 @@ export class LeakyBucket {
     private readonly bucket: number[];
     private lastElapsed: number;
 
-    constructor(capacity: number, learRate: number, bucket: number) {
+    constructor(capacity: number, learRate: number) {
         this.capacity = capacity
         this.leakRate = learRate
         this.bucket = []
